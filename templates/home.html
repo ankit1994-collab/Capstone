@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <body bgcolor=#d4a3ae></body>
+  <center>
+<head>
+	<title>Music Input Form</title>
+</head>
+<body>
+	<h1>Music Input Form</h1>
+ 
+	<form action='/predict' method="POST">
+
+		<label for="artist_familiarity">Artist Familiarity:</label>
+		<input type="number" step="any" id="artist_familiarity" name="artist_familiarity"><br>
+
+		<label for="artist_hotttnesss">Artist Hotttnesss:</label>
+		<input ttype="number" step="any" name="artist_hotttnesss"><br>
+
+    <label for="duration">Duration:</label>
+		<input type="number" step="any" name="duration"><br>
+
+    <label for="end_of_fade_in">End of Fade In:</label>
+		<input type="number" step="any" name="end_of_fade_in"><br>
+
+    <label for="key">Key:</label>
+		<input type="number" step="any" name="key"><br>
+
+    <label for="key_confidence">Key Confidence:</label>
+		<input type="number" step="any" name="key_confidence"><br>
+
+		<label for="loudness">Loudness:</label>
+		<input type="number" step="any" name="loudness"><br>
+
+		<label for="mode">Mode:</label>
+		<input type="text" name="mode"><br>
+
+		<label for="mode_confidence">Mode Confidence:</label>
+		<input type="text" name="mode_confidence"><br>
+
+		<label for="start_of_fade_out">Start of Fade Out:</label>
+		<input type="text" name="start_of_fade_out"><br>
+
+		<label for="tempo">Tempo:</label>
+		<input type="text" name="tempo"><br>
+
+    <label for="time_signature">Time Signature:</label>
+		<input type="text" name="time_signature"><br>
+
+		<label for="time_signature_confidence">Time Signature Confidence:</label>
+		<input type="text" name="time_signature_confidence"><br>
+
+    <label for="year">Year:</label>
+    <input type="text" id="year" name="year"><br><br>
+
+		<label for="artist_latitude">Artist Latitude:</label>
+		<input type="text" name="artist_latitude"><br>
+
+		<label for="artist_longitude">Artist Longitude:</label>
+		<input type="text" name="artist_longitude"><br>
+
+      <input type="submit" value="Submit">
+    </form>
+    <br>
+    {% if prediction_text %}
+    <p>{{ prediction_text }}</p>
+    {% endif %}
+    <br>
+    {% if prediction_text_retrained %}
+    <p>{{ prediction_text_retrained }}</p>
+    {% endif %}
+  </center>
+  </body>
+</html>
